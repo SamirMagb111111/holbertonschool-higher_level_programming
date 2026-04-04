@@ -5,59 +5,70 @@
 class Rectangle:
     """Defines a rectangle"""
 
-    number_of_instances = 0  # 🔥 class attribute
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initialize rectangle"""
         self.width = width
         self.height = height
-
-        Rectangle.number_of_instances += 1  # 🔥 artır
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
+        """Getter for width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter for width"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-
         self.__width = value
 
     @property
     def height(self):
+        """Getter for height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter for height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-
         self.__height = value
 
     def area(self):
+        """Returns area"""
         return self.__width * self.__height
 
     def perimeter(self):
+        """Returns perimeter"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
+        """String representation"""
         if self.__width == 0 or self.__height == 0:
             return ""
 
-        return "\n".join("#" * self.__width for _ in range(self.__height))
+        # 🔥 BOTH cases handled (print_symbol + printsymbol)
+        symbol = getattr(self, "print_symbol", "#")
+        symbol = getattr(self, "printsymbol", symbol)
+        symbol = str(symbol)
+
+        return "\n".join(symbol * self.__width for _ in range(self.__height))
 
     def __repr__(self):
-        return f"Rectangle({self.__width}, {self.__height})"
+        """Repr representation"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Called when instance is deleted"""
+        """Destructor"""
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1  # 🔥 azalt
+        Rectangle.number_of_instances -= 1
