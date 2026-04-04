@@ -11,6 +11,3 @@ def safe_print_list_integers(my_list=[], x=0):
             continue
     print()
     return count
-my_list = [1, 2, "a", 3]
-x = 4
-safe_print_list_integers(my_list, x)
