@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Module that defines Shape abstract class and its subclasses.
+Module that defines Shape and related classes.
 """
 
 from abc import ABC, abstractmethod
@@ -15,14 +15,14 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         """
-        Calculates area of the shape.
+        Calculate area.
         """
         pass
 
     @abstractmethod
     def perimeter(self):
         """
-        Calculates perimeter of the shape.
+        Calculate perimeter.
         """
         pass
 
@@ -36,9 +36,15 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
+        """
+        Calculate circle area.
+        """
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
+        """
+        Calculate circle perimeter.
+        """
         return 2 * math.pi * self.radius
 
 
@@ -52,15 +58,21 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
+        """
+        Calculate rectangle area.
+        """
         return self.width * self.height
 
     def perimeter(self):
+        """
+        Calculate rectangle perimeter.
+        """
         return 2 * (self.width + self.height)
 
 
 def shape_info(shape):
     """
-    Prints area and perimeter of a shape (duck typing).
+    Print area and perimeter of shape.
     """
     print("Area:", shape.area())
     print("Perimeter:", shape.perimeter())
