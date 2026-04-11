@@ -16,14 +16,14 @@ class Shape(ABC):
         """
         Calculate area.
         """
-        pass
+        ...
 
     @abstractmethod
     def perimeter(self):
         """
         Calculate perimeter.
         """
-        pass
+        ...
 
 
 class Circle(Shape):
