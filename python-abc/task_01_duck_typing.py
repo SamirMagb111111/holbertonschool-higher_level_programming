@@ -4,7 +4,6 @@ Module that defines Shape and related classes.
 """
 
 from abc import ABC, abstractmethod
-import math
 
 
 class Shape(ABC):
@@ -39,13 +38,13 @@ class Circle(Shape):
         """
         Calculate circle area.
         """
-        return math.pi * (self.radius ** 2)
+        return 3.141592653589793 * (self.radius ** 2)
 
     def perimeter(self):
         """
         Calculate circle perimeter.
         """
-        return 2 * math.pi * self.radius
+        return 2 * 3.141592653589793 * self.radius
 
 
 class Rectangle(Shape):
