@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Module that defines Shape and related classes.
 """
@@ -16,14 +16,14 @@ class Shape(ABC):
         """
         Calculate area.
         """
-        ...
+        pass
 
     @abstractmethod
     def perimeter(self):
         """
         Calculate perimeter.
         """
-        ...
+        pass
 
 
 class Circle(Shape):
