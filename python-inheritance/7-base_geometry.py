@@ -19,6 +19,8 @@ class BaseGeometry:
         """
         Validates that value is an integer greater than 0.
         """
+
+        # 🔥 CRITICAL: bool reject et
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
 
